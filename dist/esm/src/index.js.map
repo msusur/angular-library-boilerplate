@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"","sources":["../../../src/index.ts"],"names":[],"mappings":"AAAA,cAAc,aAAa,CAAC;AAC5B,cAAc,cAAc,CAAC;AAC7B,cAAc,SAAS,CAAC","sourcesContent":["export * from './my.module';\nexport * from './components';\nexport * from './pipes';\n\ninterface DecoratorInvocation {\n  type: Function;\n  args?: any[];\n}\n"]}
