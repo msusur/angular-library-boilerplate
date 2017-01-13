@@ -19,7 +19,16 @@ import { RoundDownPipe } from './pipes';
     BrowserModule,
     FormsModule,
     HttpModule
+  ],
+  exports:[
+    RoundDownPipe,
+    DisplayComponent
   ]
 })
 export class AngularLibExpModule {
+  public static forRoot(): ModuleWithProviders {
+    return {
+      ngModule: AngularLibExpModule
+    };
+  }
 }
