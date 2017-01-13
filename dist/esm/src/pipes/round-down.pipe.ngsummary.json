@@ -1,1 +1,0 @@
-{"summaries":[{"symbol":{"__symbol":0},"metadata":{"__symbolic":"class"},"type":{"summaryKind":0,"type":{"reference":{"__symbol":0},"diDeps":[],"lifecycleHooks":[]},"name":"roundDown","pure":true}}],"symbols":[{"__symbol":0,"name":"RoundDownPipe","filePath":"/Users/mert.susur/dev/msusur/library-demo2/src/pipes/round-down.pipe.d.ts"}]}

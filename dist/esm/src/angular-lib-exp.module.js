@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
@@ -9,7 +10,8 @@ export var AngularLibExpModule = (function () {
     }
     AngularLibExpModule.forRoot = function () {
         return {
-            ngModule: AngularLibExpModule
+            ngModule: AngularLibExpModule,
+            providers: []
         };
     };
     AngularLibExpModule.decorators = [
@@ -20,9 +22,15 @@ export var AngularLibExpModule = (function () {
                     ],
                     imports: [
                         BrowserModule,
+                        CommonModule,
                         FormsModule,
-                        HttpModule
-                    ]
+                        HttpModule,
+                    ],
+                    exports: [
+                        RoundDownPipe,
+                        DisplayComponent
+                    ],
+                    entryComponents: [DisplayComponent]
                 },] },
     ];
     /** @nocollapse */

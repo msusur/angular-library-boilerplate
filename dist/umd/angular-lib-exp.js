@@ -1,13 +1,13 @@
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory(require("@angular/platform-browser"), require("@angular/core"));
+		module.exports = factory(require("@angular/platform-browser"), require("@angular/common"), require("@angular/core"));
 	else if(typeof define === 'function' && define.amd)
-		define(["@angular/platform-browser", "@angular/core"], factory);
+		define(["@angular/platform-browser", "@angular/common", "@angular/core"], factory);
 	else if(typeof exports === 'object')
-		exports["angular-lib-exp"] = factory(require("@angular/platform-browser"), require("@angular/core"));
+		exports["angular-lib-exp"] = factory(require("@angular/platform-browser"), require("@angular/common"), require("@angular/core"));
 	else
-		root["angular-lib-exp"] = factory(root["ng"]["platformBrowser"], root["ng"]["core"]);
-})(this, function(__WEBPACK_EXTERNAL_MODULE_2__, __WEBPACK_EXTERNAL_MODULE_3__) {
+		root["angular-lib-exp"] = factory(root["ng"]["platformBrowser"], root["ng"]["common"], root["ng"]["core"]);
+})(this, function(__WEBPACK_EXTERNAL_MODULE_2__, __WEBPACK_EXTERNAL_MODULE_3__, __WEBPACK_EXTERNAL_MODULE_4__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -59,8 +59,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 	}
 	__export(__webpack_require__(1));
-	__export(__webpack_require__(26));
-	__export(__webpack_require__(28));
+	__export(__webpack_require__(27));
+	__export(__webpack_require__(29));
 
 
 /***/ },
@@ -78,17 +78,19 @@ return /******/ (function(modules) { // webpackBootstrap
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
 	var platform_browser_1 = __webpack_require__(2);
-	var core_1 = __webpack_require__(3);
-	var forms_1 = __webpack_require__(4);
-	var http_1 = __webpack_require__(25);
-	var components_1 = __webpack_require__(26);
-	var pipes_1 = __webpack_require__(28);
+	var common_1 = __webpack_require__(3);
+	var core_1 = __webpack_require__(4);
+	var forms_1 = __webpack_require__(5);
+	var http_1 = __webpack_require__(26);
+	var components_1 = __webpack_require__(27);
+	var pipes_1 = __webpack_require__(29);
 	var AngularLibExpModule = (function () {
 	    function AngularLibExpModule() {
 	    }
 	    AngularLibExpModule.forRoot = function () {
 	        return {
-	            ngModule: AngularLibExpModule
+	            ngModule: AngularLibExpModule,
+	            providers: []
 	        };
 	    };
 	    AngularLibExpModule = __decorate([
@@ -99,9 +101,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	            ],
 	            imports: [
 	                platform_browser_1.BrowserModule,
+	                common_1.CommonModule,
 	                forms_1.FormsModule,
-	                http_1.HttpModule
-	            ]
+	                http_1.HttpModule,
+	            ],
+	            exports: [
+	                pipes_1.RoundDownPipe,
+	                components_1.DisplayComponent
+	            ],
+	            entryComponents: [components_1.DisplayComponent]
 	        }), 
 	        __metadata('design:paramtypes', [])
 	    ], AngularLibExpModule);
@@ -124,6 +132,12 @@ return /******/ (function(modules) { // webpackBootstrap
 
 /***/ },
 /* 4 */
+/***/ function(module, exports) {
+
+	module.exports = __WEBPACK_EXTERNAL_MODULE_4__;
+
+/***/ },
+/* 5 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -132,7 +146,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * License: MIT
 	 */
 	(function (global, factory) {
-	     true ? factory(exports, __webpack_require__(3), __webpack_require__(5), __webpack_require__(7), __webpack_require__(8), __webpack_require__(23)) :
+	     true ? factory(exports, __webpack_require__(4), __webpack_require__(6), __webpack_require__(8), __webpack_require__(9), __webpack_require__(24)) :
 	    typeof define === 'function' && define.amd ? define(['exports', '@angular/core', 'rxjs/operator/toPromise', 'rxjs/Subject', 'rxjs/Observable', 'rxjs/observable/fromPromise'], factory) :
 	    (factory((global.ng = global.ng || {}, global.ng.forms = global.ng.forms || {}),global.ng.core,global.Rx.Observable.prototype,global.Rx,global.Rx,global.Rx.Observable));
 	}(this, function (exports,_angular_core,rxjs_operator_toPromise,rxjs_Subject,rxjs_Observable,rxjs_observable_fromPromise) { 'use strict';
@@ -5894,11 +5908,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	}));
 
 /***/ },
-/* 5 */
+/* 6 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var root_1 = __webpack_require__(6);
+	var root_1 = __webpack_require__(7);
 	/* tslint:disable:max-line-length */
 	/**
 	 * @param PromiseCtor
@@ -5928,7 +5942,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	//# sourceMappingURL=toPromise.js.map
 
 /***/ },
-/* 6 */
+/* 7 */
 /***/ function(module, exports) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {"use strict";
@@ -5947,7 +5961,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ },
-/* 7 */
+/* 8 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -5956,12 +5970,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Observable_1 = __webpack_require__(8);
-	var Subscriber_1 = __webpack_require__(10);
-	var Subscription_1 = __webpack_require__(12);
-	var ObjectUnsubscribedError_1 = __webpack_require__(21);
-	var SubjectSubscription_1 = __webpack_require__(22);
-	var rxSubscriber_1 = __webpack_require__(19);
+	var Observable_1 = __webpack_require__(9);
+	var Subscriber_1 = __webpack_require__(11);
+	var Subscription_1 = __webpack_require__(13);
+	var ObjectUnsubscribedError_1 = __webpack_require__(22);
+	var SubjectSubscription_1 = __webpack_require__(23);
+	var rxSubscriber_1 = __webpack_require__(20);
 	/**
 	 * @class SubjectSubscriber<T>
 	 */
@@ -6112,13 +6126,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	//# sourceMappingURL=Subject.js.map
 
 /***/ },
-/* 8 */
+/* 9 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var root_1 = __webpack_require__(6);
-	var toSubscriber_1 = __webpack_require__(9);
-	var observable_1 = __webpack_require__(20);
+	var root_1 = __webpack_require__(7);
+	var toSubscriber_1 = __webpack_require__(10);
+	var observable_1 = __webpack_require__(21);
 	/**
 	 * A representation of any set of values over any amount of time. This the most basic building block
 	 * of RxJS.
@@ -6246,13 +6260,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	//# sourceMappingURL=Observable.js.map
 
 /***/ },
-/* 9 */
+/* 10 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var Subscriber_1 = __webpack_require__(10);
-	var rxSubscriber_1 = __webpack_require__(19);
-	var Observer_1 = __webpack_require__(18);
+	var Subscriber_1 = __webpack_require__(11);
+	var rxSubscriber_1 = __webpack_require__(20);
+	var Observer_1 = __webpack_require__(19);
 	function toSubscriber(nextOrObserver, error, complete) {
 	    if (nextOrObserver) {
 	        if (nextOrObserver instanceof Subscriber_1.Subscriber) {
@@ -6271,7 +6285,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	//# sourceMappingURL=toSubscriber.js.map
 
 /***/ },
-/* 10 */
+/* 11 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -6280,10 +6294,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var isFunction_1 = __webpack_require__(11);
-	var Subscription_1 = __webpack_require__(12);
-	var Observer_1 = __webpack_require__(18);
-	var rxSubscriber_1 = __webpack_require__(19);
+	var isFunction_1 = __webpack_require__(12);
+	var Subscription_1 = __webpack_require__(13);
+	var Observer_1 = __webpack_require__(19);
+	var rxSubscriber_1 = __webpack_require__(20);
 	/**
 	 * Implements the {@link Observer} interface and extends the
 	 * {@link Subscription} class. While the {@link Observer} is the public API for
@@ -6525,7 +6539,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	//# sourceMappingURL=Subscriber.js.map
 
 /***/ },
-/* 11 */
+/* 12 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -6536,7 +6550,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	//# sourceMappingURL=isFunction.js.map
 
 /***/ },
-/* 12 */
+/* 13 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -6545,12 +6559,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var isArray_1 = __webpack_require__(13);
-	var isObject_1 = __webpack_require__(14);
-	var isFunction_1 = __webpack_require__(11);
-	var tryCatch_1 = __webpack_require__(15);
-	var errorObject_1 = __webpack_require__(16);
-	var UnsubscriptionError_1 = __webpack_require__(17);
+	var isArray_1 = __webpack_require__(14);
+	var isObject_1 = __webpack_require__(15);
+	var isFunction_1 = __webpack_require__(12);
+	var tryCatch_1 = __webpack_require__(16);
+	var errorObject_1 = __webpack_require__(17);
+	var UnsubscriptionError_1 = __webpack_require__(18);
 	/**
 	 * Represents a disposable resource, such as the execution of an Observable. A
 	 * Subscription has one important method, `unsubscribe`, that takes no argument
@@ -6719,7 +6733,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	//# sourceMappingURL=Subscription.js.map
 
 /***/ },
-/* 13 */
+/* 14 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -6727,7 +6741,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	//# sourceMappingURL=isArray.js.map
 
 /***/ },
-/* 14 */
+/* 15 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -6738,11 +6752,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	//# sourceMappingURL=isObject.js.map
 
 /***/ },
-/* 15 */
+/* 16 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var errorObject_1 = __webpack_require__(16);
+	var errorObject_1 = __webpack_require__(17);
 	var tryCatchTarget;
 	function tryCatcher() {
 	    try {
@@ -6762,7 +6776,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	//# sourceMappingURL=tryCatch.js.map
 
 /***/ },
-/* 16 */
+/* 17 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -6771,7 +6785,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	//# sourceMappingURL=errorObject.js.map
 
 /***/ },
-/* 17 */
+/* 18 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -6801,7 +6815,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	//# sourceMappingURL=UnsubscriptionError.js.map
 
 /***/ },
-/* 18 */
+/* 19 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -6814,22 +6828,22 @@ return /******/ (function(modules) { // webpackBootstrap
 	//# sourceMappingURL=Observer.js.map
 
 /***/ },
-/* 19 */
+/* 20 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var root_1 = __webpack_require__(6);
+	var root_1 = __webpack_require__(7);
 	var Symbol = root_1.root.Symbol;
 	exports.$$rxSubscriber = (typeof Symbol === 'function' && typeof Symbol.for === 'function') ?
 	    Symbol.for('rxSubscriber') : '@@rxSubscriber';
 	//# sourceMappingURL=rxSubscriber.js.map
 
 /***/ },
-/* 20 */
+/* 21 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var root_1 = __webpack_require__(6);
+	var root_1 = __webpack_require__(7);
 	function getSymbolObservable(context) {
 	    var $$observable;
 	    var Symbol = context.Symbol;
@@ -6852,7 +6866,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	//# sourceMappingURL=observable.js.map
 
 /***/ },
-/* 21 */
+/* 22 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -6884,7 +6898,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	//# sourceMappingURL=ObjectUnsubscribedError.js.map
 
 /***/ },
-/* 22 */
+/* 23 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -6893,7 +6907,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var Subscription_1 = __webpack_require__(12);
+	var Subscription_1 = __webpack_require__(13);
 	/**
 	 * We need this JSDoc comment for affecting ESDoc.
 	 * @ignore
@@ -6929,16 +6943,16 @@ return /******/ (function(modules) { // webpackBootstrap
 	//# sourceMappingURL=SubjectSubscription.js.map
 
 /***/ },
-/* 23 */
+/* 24 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var PromiseObservable_1 = __webpack_require__(24);
+	var PromiseObservable_1 = __webpack_require__(25);
 	exports.fromPromise = PromiseObservable_1.PromiseObservable.create;
 	//# sourceMappingURL=fromPromise.js.map
 
 /***/ },
-/* 24 */
+/* 25 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -6947,8 +6961,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var root_1 = __webpack_require__(6);
-	var Observable_1 = __webpack_require__(8);
+	var root_1 = __webpack_require__(7);
+	var Observable_1 = __webpack_require__(9);
 	/**
 	 * We need this JSDoc comment for affecting ESDoc.
 	 * @extends {Ignored}
@@ -7064,7 +7078,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	//# sourceMappingURL=PromiseObservable.js.map
 
 /***/ },
-/* 25 */
+/* 26 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -7073,7 +7087,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * License: MIT
 	 */
 	(function (global, factory) {
-	     true ? factory(exports, __webpack_require__(3), __webpack_require__(8), __webpack_require__(2)) :
+	     true ? factory(exports, __webpack_require__(4), __webpack_require__(9), __webpack_require__(2)) :
 	    typeof define === 'function' && define.amd ? define(['exports', '@angular/core', 'rxjs/Observable', '@angular/platform-browser'], factory) :
 	    (factory((global.ng = global.ng || {}, global.ng.http = global.ng.http || {}),global.ng.core,global.Rx,global.ng.platformBrowser));
 	}(this, function (exports,_angular_core,rxjs_Observable,_angular_platformBrowser) { 'use strict';
@@ -9097,18 +9111,18 @@ return /******/ (function(modules) { // webpackBootstrap
 	}));
 
 /***/ },
-/* 26 */
+/* 27 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	function __export(m) {
 	    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 	}
-	__export(__webpack_require__(27));
+	__export(__webpack_require__(28));
 
 
 /***/ },
-/* 27 */
+/* 28 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -9121,7 +9135,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var core_1 = __webpack_require__(3);
+	var core_1 = __webpack_require__(4);
 	var DisplayComponent = (function () {
 	    function DisplayComponent() {
 	    }
@@ -9142,18 +9156,18 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 28 */
+/* 29 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	function __export(m) {
 	    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 	}
-	__export(__webpack_require__(29));
+	__export(__webpack_require__(30));
 
 
 /***/ },
-/* 29 */
+/* 30 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -9166,7 +9180,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var core_1 = __webpack_require__(3);
+	var core_1 = __webpack_require__(4);
 	var RoundDownPipe = (function () {
 	    function RoundDownPipe() {
 	    }

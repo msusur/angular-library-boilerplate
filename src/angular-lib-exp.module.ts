@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 import {
   ModuleWithProviders,
   NgModule
@@ -17,18 +18,23 @@ import { RoundDownPipe } from './pipes';
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     FormsModule,
-    HttpModule
+    HttpModule,
   ],
-  exports:[
+  exports: [
     RoundDownPipe,
     DisplayComponent
-  ]
+  ],
+  entryComponents: [DisplayComponent]
 })
 export class AngularLibExpModule {
   public static forRoot(): ModuleWithProviders {
     return {
-      ngModule: AngularLibExpModule
+      ngModule: AngularLibExpModule,
+      providers: [
+
+      ]
     };
   }
 }

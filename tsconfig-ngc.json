@@ -22,8 +22,8 @@
   ],
   "angularCompilerOptions": {
     "genDir": "./dist/esm",
-    "skipTemplateCodegen": false,
+    "skipTemplateCodegen": true,
     "strictMetadataEmit": true,
-    "debug": false
+    "debug": true
   }
 }
