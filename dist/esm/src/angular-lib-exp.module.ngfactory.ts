@@ -6,7 +6,7 @@
  /* tslint:disable */
 
 import * as import0 from '@angular/core/src/linker/ng_module_factory';
-import * as import1 from '../../../src/my.module';
+import * as import1 from '../../../src/angular-lib-exp.module';
 import * as import2 from '@angular/common/src/common_module';
 import * as import3 from '@angular/core/src/application_module';
 import * as import4 from '@angular/platform-browser/src/browser';
@@ -48,14 +48,14 @@ import * as import39 from '@angular/core/src/change_detection/differs/iterable_d
 import * as import40 from '@angular/core/src/change_detection/differs/keyvalue_differs';
 import * as import41 from '@angular/http/src/interfaces';
 import * as import42 from '@angular/http/src/http';
-class MyModuleInjector extends import0.NgModuleInjector<import1.MyModule> {
+class AngularLibExpModuleInjector extends import0.NgModuleInjector<import1.AngularLibExpModule> {
   _CommonModule_0:import2.CommonModule;
   _ApplicationModule_1:import3.ApplicationModule;
   _BrowserModule_2:import4.BrowserModule;
   _InternalFormsSharedModule_3:import5.InternalFormsSharedModule;
   _FormsModule_4:import6.FormsModule;
   _HttpModule_5:import7.HttpModule;
-  _MyModule_6:import1.MyModule;
+  _AngularLibExpModule_6:import1.AngularLibExpModule;
   __LOCALE_ID_7:any;
   __NgLocalization_8:import8.NgLocaleLocalization;
   _ErrorHandler_9:any;
@@ -208,19 +208,19 @@ class MyModuleInjector extends import0.NgModuleInjector<import1.MyModule> {
     if ((this.__Http_38 == null)) { (this.__Http_38 = import7.httpFactory(this._XHRBackend_36,this._RequestOptions_37)); }
     return this.__Http_38;
   }
-  createInternal():import1.MyModule {
+  createInternal():import1.AngularLibExpModule {
     this._CommonModule_0 = new import2.CommonModule();
     this._ApplicationModule_1 = new import3.ApplicationModule();
     this._BrowserModule_2 = new import4.BrowserModule(this.parent.get(import4.BrowserModule,(null as any)));
     this._InternalFormsSharedModule_3 = new import5.InternalFormsSharedModule();
     this._FormsModule_4 = new import6.FormsModule();
     this._HttpModule_5 = new import7.HttpModule();
-    this._MyModule_6 = new import1.MyModule();
+    this._AngularLibExpModule_6 = new import1.AngularLibExpModule();
     this._ErrorHandler_9 = import4.errorHandler();
     this._ApplicationInitStatus_10 = new import9.ApplicationInitStatus(this.parent.get(import9.APP_INITIALIZER,(null as any)));
     this._Testability_11 = new import10.Testability(this.parent.get(import31.NgZone));
     this._ApplicationRef__12 = new import11.ApplicationRef_(this.parent.get(import31.NgZone),this.parent.get(import33.Console),this,this._ErrorHandler_9,this,this._ApplicationInitStatus_10,this.parent.get(import10.TestabilityRegistry,(null as any)),this._Testability_11);
-    return this._MyModule_6;
+    return this._AngularLibExpModule_6;
   }
   getInternal(token:any,notFoundResult:any):any {
     if ((token === import2.CommonModule)) { return this._CommonModule_0; }
@@ -229,7 +229,7 @@ class MyModuleInjector extends import0.NgModuleInjector<import1.MyModule> {
     if ((token === import5.InternalFormsSharedModule)) { return this._InternalFormsSharedModule_3; }
     if ((token === import6.FormsModule)) { return this._FormsModule_4; }
     if ((token === import7.HttpModule)) { return this._HttpModule_5; }
-    if ((token === import1.MyModule)) { return this._MyModule_6; }
+    if ((token === import1.AngularLibExpModule)) { return this._AngularLibExpModule_6; }
     if ((token === import27.LOCALE_ID)) { return this._LOCALE_ID_7; }
     if ((token === import8.NgLocalization)) { return this._NgLocalization_8; }
     if ((token === import34.ErrorHandler)) { return this._ErrorHandler_9; }
@@ -268,4 +268,4 @@ class MyModuleInjector extends import0.NgModuleInjector<import1.MyModule> {
     this._ApplicationRef__12.ngOnDestroy();
   }
 }
-export const MyModuleNgFactory:import0.NgModuleFactory<import1.MyModule> = new import0.NgModuleFactory(MyModuleInjector,import1.MyModule);
+export const AngularLibExpModuleNgFactory:import0.NgModuleFactory<import1.AngularLibExpModule> = new import0.NgModuleFactory(AngularLibExpModuleInjector,import1.AngularLibExpModule);

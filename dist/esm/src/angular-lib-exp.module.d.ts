@@ -1,4 +1,4 @@
 import { ModuleWithProviders } from '@angular/core';
-export declare class MyModule {
+export declare class AngularLibExpModule {
     static forRoot(): ModuleWithProviders;
 }

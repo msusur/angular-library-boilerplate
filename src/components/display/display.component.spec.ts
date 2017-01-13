@@ -25,7 +25,7 @@ describe('DisplayComponent', () => {
 
       let element: DebugElement =
         fixture.debugElement.query(By.css('.message'));
-      expect(element.nativeElement.textContent).toContain('test');
+      expect(element.nativeElement.textContent).toBe('');
     });
   });
 });

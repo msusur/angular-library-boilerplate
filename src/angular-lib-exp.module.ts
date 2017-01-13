@@ -21,10 +21,10 @@ import { RoundDownPipe } from './pipes';
     HttpModule
   ]
 })
-export class MyModule {
+export class AngularLibExpModule {
   public static forRoot(): ModuleWithProviders {
     return {
-      ngModule: MyModule
+      ngModule: AngularLibExpModule
     };
   }
 }

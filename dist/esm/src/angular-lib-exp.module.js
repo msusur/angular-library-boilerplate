@@ -4,15 +4,15 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { DisplayComponent } from './components';
 import { RoundDownPipe } from './pipes';
-export var MyModule = (function () {
-    function MyModule() {
+export var AngularLibExpModule = (function () {
+    function AngularLibExpModule() {
     }
-    MyModule.forRoot = function () {
+    AngularLibExpModule.forRoot = function () {
         return {
-            ngModule: MyModule
+            ngModule: AngularLibExpModule
         };
     };
-    MyModule.decorators = [
+    AngularLibExpModule.decorators = [
         { type: NgModule, args: [{
                     declarations: [
                         DisplayComponent,
@@ -26,7 +26,7 @@ export var MyModule = (function () {
                 },] },
     ];
     /** @nocollapse */
-    MyModule.ctorParameters = function () { return []; };
-    return MyModule;
+    AngularLibExpModule.ctorParameters = function () { return []; };
+    return AngularLibExpModule;
 }());
-//# sourceMappingURL=my.module.js.map
+//# sourceMappingURL=angular-lib-exp.module.js.map

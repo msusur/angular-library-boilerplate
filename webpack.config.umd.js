@@ -53,9 +53,9 @@ module.exports = {
   },
   output: {
     path: './dist/umd',
-    filename: 'my-module.js',
+    filename: 'angular-lib-exp.js',
     libraryTarget: 'umd',
-    library: 'my-module'
+    library: 'angular-lib-exp'
   },
   plugins: [
     new StyleLintPlugin({

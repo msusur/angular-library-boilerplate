@@ -1,8 +1,8 @@
 {
-  "name": "my-module",
+  "name": "angular-lib-exp",
   "version": "0.0.0",
   "description": "Common package for angular apps. ",
-  "main": "./umd/my-module.js",
+  "main": "./umd/angular-lib-exp.js",
   "module": "./esm/src/index.js",
   "typings": "./esm/src/index.d.ts",
   "scripts": {

@@ -4,9 +4,9 @@
 	else if(typeof define === 'function' && define.amd)
 		define(["@angular/platform-browser", "@angular/core"], factory);
 	else if(typeof exports === 'object')
-		exports["my-module"] = factory(require("@angular/platform-browser"), require("@angular/core"));
+		exports["angular-lib-exp"] = factory(require("@angular/platform-browser"), require("@angular/core"));
 	else
-		root["my-module"] = factory(root["ng"]["platformBrowser"], root["ng"]["core"]);
+		root["angular-lib-exp"] = factory(root["ng"]["platformBrowser"], root["ng"]["core"]);
 })(this, function(__WEBPACK_EXTERNAL_MODULE_2__, __WEBPACK_EXTERNAL_MODULE_3__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
@@ -83,15 +83,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	var http_1 = __webpack_require__(25);
 	var components_1 = __webpack_require__(26);
 	var pipes_1 = __webpack_require__(28);
-	var MyModule = (function () {
-	    function MyModule() {
+	var AngularLibExpModule = (function () {
+	    function AngularLibExpModule() {
 	    }
-	    MyModule.forRoot = function () {
+	    AngularLibExpModule.forRoot = function () {
 	        return {
-	            ngModule: MyModule
+	            ngModule: AngularLibExpModule
 	        };
 	    };
-	    MyModule = __decorate([
+	    AngularLibExpModule = __decorate([
 	        core_1.NgModule({
 	            declarations: [
 	                components_1.DisplayComponent,
@@ -104,10 +104,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	            ]
 	        }), 
 	        __metadata('design:paramtypes', [])
-	    ], MyModule);
-	    return MyModule;
+	    ], AngularLibExpModule);
+	    return AngularLibExpModule;
 	}());
-	exports.MyModule = MyModule;
+	exports.AngularLibExpModule = AngularLibExpModule;
 
 
 /***/ },
@@ -9188,4 +9188,4 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ ])
 });
 ;
-//# sourceMappingURL=my-module.js.map
+//# sourceMappingURL=angular-lib-exp.js.map
