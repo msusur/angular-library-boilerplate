@@ -2,9 +2,9 @@
   "name": "angular-lib-exp",
   "version": "0.0.0",
   "description": "Common package for angular apps. ",
-  "main": "./umd/angular-lib-exp.js",
-  "module": "./esm/src/index.js",
-  "typings": "./esm/src/index.d.ts",
+  "main": "./dist/umd/angular-lib-exp.js",
+  "module": "./dist/esm/src/index.js",
+  "typings": "./dist/esm/src/index.d.ts",
   "scripts": {
     "lint": "tslint \"src/**/*.ts\" --noUnusedParameters --noUnusedLocals",
     "start": "concurrently --raw \"webpack-dev-server --open --port 1772\" \"npm run test:watch\"",
