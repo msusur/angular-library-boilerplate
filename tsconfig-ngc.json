@@ -13,8 +13,11 @@
     "inlineSources": true,
     "types": [],
     "lib": [
-      "es6",
-      "dom"
+      "es2015",
+      "dom",
+      "es2015",
+      "es2015.iterable",
+      "scripthost"
     ]
   },
   "files": [

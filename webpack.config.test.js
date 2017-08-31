@@ -12,20 +12,19 @@ const metadata = {
 };
 
 module.exports = {
-  debug: true,
   devtool: 'inline-source-map',
   module: {
     loaders: [
       { test: /\.css$/, loader: 'raw', exclude: /node_modules/ },
       { test: /\.css$/, loader: 'style!css?-minimize', exclude: /src/ },
       { test: /\.html$/, loader: 'raw' },
-      { test: /\.ts$/, loader: 'ts', query: { compilerOptions: { noEmit: false } } }
+      { test: /\.ts$/, loader: 'ts-loader', query: { compilerOptions: { noEmit: false } } }
     ]
   },
   plugins: [
     new DefinePlugin({ 'webpack': { 'ENV': JSON.stringify(metadata.env) } })
   ],
   resolve: {
-    extensions: ['', '.ts', '.js']
+    extensions: ['.tsx', '.ts', '.js']
   }
 };

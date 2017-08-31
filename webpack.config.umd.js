@@ -14,9 +14,7 @@ const metadata = {
 };
 module.exports = {
   devtool: 'source-map',
-  entry: {
-    'main': './src/index.ts'
-  },
+  entry: './src/index.ts',
   externals: {
     '@angular/core': {
       root: ['ng', 'core'],
@@ -48,11 +46,11 @@ module.exports = {
       { test: /\.css$/, loader: 'raw', exclude: /node_modules/ },
       { test: /\.css$/, loader: 'style!css?-minimize', exclude: /src/ },
       { test: /\.html$/, loader: 'raw' },
-      { test: /\.ts$/, loader: 'ts', query: { compilerOptions: { noEmit: false } } }
+      { test: /\.ts$/, loader: 'ts-loader', query: { compilerOptions: { noEmit: false } } }
     ]
   },
   output: {
-    path: './dist/umd',
+    path: path.resolve(__dirname, 'dist/umd'),
     filename: 'angular-lib-exp.js',
     libraryTarget: 'umd',
     library: 'angular-lib-exp'
@@ -66,7 +64,7 @@ module.exports = {
     new CompressionPlugin({ regExp: /\.css$|\.html$|\.js$|\.map$/ })
   ],
   resolve: {
-    extensions: ['', '.ts', '.js'],
+    extensions: ['tsx', '.ts', '.js'],
     modules: [path.resolve(__dirname, 'node_modules')]
   }
 };
