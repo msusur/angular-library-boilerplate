@@ -1,1 +1,0 @@
-{"version":3,"file":"index.js","sourceRoot":"","sources":["../../../../src/pipes/index.ts"],"names":[],"mappings":"AAAA,cAAc,mBAAmB,CAAC","sourcesContent":["export * from './round-down.pipe';\n\ninterface DecoratorInvocation {\n  type: Function;\n  args?: any[];\n}\n"]}
